@@ -60,17 +60,10 @@ class MirootfsMaker(PkgMaker.StepMaker):
 
     def run_post_scripts(self):
         # Add some directory, nodes, links and check privilege.
-<<<<<<< HEAD:SConstruct-rootfs
-        os.chmod('buildpkg/post_scripts/commands.sh', 0777)
-        cmds = [getSudoSh("buildpkg/post_scripts/commands.sh $ROOT"),
-                getSudoSh("install -m 777 buildpkg/post_scripts/commands_chroot.sh $ROOT"),
-                getSudoSh('/usr/sbin/chroot $ROOT /commands_chroot.sh'),
-=======
         os.chmod(_p(TOPDIR, 'rootfs/post_scripts/commands.sh'), 0777)
         cmds = [getSudoSh("%s/rootfs/post_scripts/commands.sh $ROOT" % TOPDIR),
                 getSudoSh("install -m 0777 %s/rootfs/post_scripts/commands_chroot.sh $ROOT" % TOPDIR),
                 getSudoSh('chroot $ROOT /commands_chroot.sh'),
->>>>>>> zy/mi2.0.1:SConscript-rootfs
                 getSudoSh('rm $ROOT/commands_chroot.sh'),
             ]
         return [], cmds

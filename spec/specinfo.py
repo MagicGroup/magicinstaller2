@@ -8,11 +8,7 @@ distname='MagicLinux'
 
 # distver is used to specify the version of the installed distribution.
 #
-<<<<<<< HEAD
-distver='2.997'
-=======
 distver='3.0beta1'
->>>>>>> zy/mi2.0.1
 
 # distkernelver is used to specify the kernel version which used by the
 # installed distribution.
@@ -43,11 +39,7 @@ langset='zh_CN:en'
 # which should be provided in English only. Note that this string will be
 # placed into m4 command and put into C string, so be carefully about '\n'.
 #
-<<<<<<< HEAD
-welcome="Welcome to MagicLinux 3.0 (Kaibao)!"
-=======
 welcome="Welcome to MagicLinux 3.0 beta1 (Kaibao)!"
->>>>>>> zy/mi2.0.1
 
 # kmods_arrange is map which key is the boot/driver floppy disk name and
 # the value is the modules which should be placed in. The item with 'boot'
@@ -167,14 +159,9 @@ if 0:
 # basepkg_list is a list content the base tool chain packages order by the
 # dependency. MI will put packages in order refer to this list.
 
-<<<<<<< HEAD
-basepkg_list = ['binutils',
-		'filesystem',
-=======
 basepkg_list = [
                 'filesystem',
                 'binutils',
->>>>>>> zy/mi2.0.1
                 #'binutils-devel',
                 #'kernel-headers',
                 'glibc',
