@@ -8,7 +8,11 @@ distname='MagicLinux'
 
 # distver is used to specify the version of the installed distribution.
 #
+<<<<<<< HEAD
 distver='2.997'
+=======
+distver='3.0beta1'
+>>>>>>> zy/mi2.0.1
 
 # distkernelver is used to specify the kernel version which used by the
 # installed distribution.
@@ -39,7 +43,11 @@ langset='zh_CN:en'
 # which should be provided in English only. Note that this string will be
 # placed into m4 command and put into C string, so be carefully about '\n'.
 #
+<<<<<<< HEAD
 welcome="Welcome to MagicLinux 3.0 (Kaibao)!"
+=======
+welcome="Welcome to MagicLinux 3.0 beta1 (Kaibao)!"
+>>>>>>> zy/mi2.0.1
 
 # kmods_arrange is map which key is the boot/driver floppy disk name and
 # the value is the modules which should be placed in. The item with 'boot'
@@ -159,8 +167,14 @@ if 0:
 # basepkg_list is a list content the base tool chain packages order by the
 # dependency. MI will put packages in order refer to this list.
 
+<<<<<<< HEAD
 basepkg_list = ['binutils',
 		'filesystem',
+=======
+basepkg_list = [
+                'filesystem',
+                'binutils',
+>>>>>>> zy/mi2.0.1
                 #'binutils-devel',
                 #'kernel-headers',
                 'glibc',
@@ -181,9 +195,15 @@ basepkg_list = ['binutils',
 #abs_pos = [("openldap-clients-2.4.15-1mgc25.i686.rpm", (0, 149)),]
 
 ######################################################################
+# allpkg_nopre is a boolean variable, if it is True, all pakcage will
+# not execute prescript during installation.
+# allpkg_nopost if it is True, do not execute postscript
+allpkg_nopre = True
+allpkg_nopost = False
+
+######################################################################
 # noscripts_list is a list of package not execute package scriptlet(s)
-#noscripts_list = ['MAKEDEV-3.24-2mgc25.i686.rpm',
-#                  'hal-0.5.13-5mgc25.i686.rpm',]
+noscripts_list = ['kernel-PAE-3.4.45-1mgc30.i686.rpm', ]
 
 ######################################################################
 # autopart_profile is used to add the auto-partition
@@ -225,20 +245,20 @@ basepkg_list = ['binutils',
 autopart_profile = {
     'default' : ["Single partition with swap",
                  ("SWAP", "SWAP", "512M"),
-                 ("/", "ext3", "100%")], 
+                 ("/", "ext4", "100%")], 
 
 #    'common' : ["Separated /boot, /, /home",
 #                 ("/boot", "ext2", "64M"),
-#                 ("/", "ext3", "2000M"),
-#                 ("/home", "ext3", "0")],
+#                 ("/", "ext4", "2000M"),
+#                 ("/home", "ext4", "0")],
 
     'common' : ["Separated /, /home",
-                 ("/", "ext3", "5160M"),
-                 ("/home", "ext3", "2060M")],
+                 ("/", "ext4", "5160M"),
+                 ("/home", "ext4", "2060M")],
 
     'custom' :  ["Customed autopart profile",
                  ("SWAP", "SWAP", "512M"),
-                 ("/", "ext3", "2060M"),
-                 ("/usr", "ext3", "4130M"),
-                 ("/home", "ext3", "2060M")]
+                 ("/", "ext4", "2060M"),
+                 ("/usr", "ext4", "4130M"),
+                 ("/home", "ext4", "2060M")]
     }
