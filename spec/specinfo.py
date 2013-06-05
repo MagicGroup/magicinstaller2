@@ -8,12 +8,12 @@ distname='MagicLinux'
 
 # distver is used to specify the version of the installed distribution.
 #
-distver='2.5'
+distver='2.997'
 
 # distkernelver is used to specify the kernel version which used by the
 # installed distribution.
 #
-distkernelver='2.6.30.10-smp'
+distkernelver='3.4.45-1mgc30.i686.PAE'
 
 # pkgtype is used to specify the package management scheme used by the
 # installed distribution. Now only 'rpm' is supported.
@@ -39,7 +39,7 @@ langset='zh_CN:en'
 # which should be provided in English only. Note that this string will be
 # placed into m4 command and put into C string, so be carefully about '\n'.
 #
-welcome="Welcome to MagicLinux 2.5 (Jingyou)!"
+welcome="Welcome to MagicLinux 3.0 (Kaibao)!"
 
 # kmods_arrange is map which key is the boot/driver floppy disk name and
 # the value is the modules which should be placed in. The item with 'boot'
@@ -160,6 +160,7 @@ if 0:
 # dependency. MI will put packages in order refer to this list.
 
 basepkg_list = ['binutils',
+		'filesystem',
                 #'binutils-devel',
                 #'kernel-headers',
                 'glibc',
